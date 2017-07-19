@@ -1,0 +1,8 @@
+{
+    "botman/driver-config": [
+        "stubs/hipchat.php"
+    ],
+    "botman/driver": [
+        "BotMan\\Drivers\\HipChat\\HipChatDriver"
+    ]
+}
