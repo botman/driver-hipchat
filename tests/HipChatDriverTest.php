@@ -204,7 +204,7 @@ class HipChatDriverTest extends PHPUnit_Framework_TestCase
         $driver = new HipChatDriver($request, [
             'hipchat' => [
                 'urls' => ['1', '2'],
-            ]
+            ],
         ], $htmlInterface);
 
         $this->assertTrue($driver->isConfigured());
@@ -212,7 +212,7 @@ class HipChatDriverTest extends PHPUnit_Framework_TestCase
         $driver = new HipChatDriver($request, [
             'hipchat' => [
                 'urls' => [],
-            ]
+            ],
         ], $htmlInterface);
 
         $this->assertFalse($driver->isConfigured());
@@ -224,7 +224,7 @@ class HipChatDriverTest extends PHPUnit_Framework_TestCase
         $driver = new HipChatDriver($request, [
             'hipchat' => [
                 'urls' => [''],
-            ]
+            ],
         ], $htmlInterface);
 
         $this->assertFalse($driver->isConfigured());
