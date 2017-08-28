@@ -2,6 +2,11 @@
 
 BotMan driver to connect HipChat with [BotMan](https://github.com/botman/botman)
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/botman/driver-hipchat.svg?style=flat-square)](https://packagist.org/packages/botman/driver-hipchat)
+[![Build Status](https://travis-ci.org/botman/driver-hipchat.svg?branch=master)](https://travis-ci.org/botman/driver-hipchat)
+[![codecov](https://codecov.io/gh/botman/driver-hipchat/branch/master/graph/badge.svg)](https://codecov.io/gh/botman/driver-hipchat)
+
+
 ## Contributing
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
