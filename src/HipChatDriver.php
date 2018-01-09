@@ -92,10 +92,12 @@ class HipChatDriver extends HttpDriver
             $parameters['message'] = $message;
         }
 
+        $recipient = $matchingMessage->getRecipient() === '' ? $matchingMessage->getSender() : $matchingMessage->getRecipient();
+
         $this->apiURL = Collection::make($this->config->get('urls', []))->filter(function ($url) use (
-            $matchingMessage
+            $recipient
         ) {
-            return strstr($url, 'room/'.$matchingMessage->getRecipient().'/notification');
+            return strstr($url, 'room/'.$recipient.'/notification');
         })->first();
 
         return $parameters;
