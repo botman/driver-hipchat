@@ -255,7 +255,7 @@ class HipChatDriverTest extends PHPUnit_Framework_TestCase
 
         // Now if the user wants to set the format to HTML
         $payload = $driver->buildServicePayload('Test message', $message, [
-            'message_format' => 'html'
+            'message_format' => 'html',
         ]);
 
         $this->assertEquals('html', $payload['message_format']);
