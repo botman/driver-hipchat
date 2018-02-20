@@ -229,4 +229,35 @@ class HipChatDriverTest extends PHPUnit_Framework_TestCase
 
         $this->assertFalse($driver->isConfigured());
     }
+
+    /** @test */
+    public function it_builds_the_correct_payload()
+    {
+        // Given a user wants to send html
+        $driver = $this->getDriver([
+            'event' => 'room_message',
+            'item' => [
+                'message' => [
+                    'from' => [
+                        'id' => '12345',
+                    ],
+                    'message' => 'Hi Julia',
+                ],
+                'room' => [
+                    'id' => '98765',
+                ],
+            ],
+            'webhook_id' => '11223344',
+        ]);
+        $message = $driver->getMessages()[0];
+        $payload = $driver->buildServicePayload('Test message', $message);
+        $this->assertEquals('text', $payload['message_format']);
+
+        // Now if the user wants to set the format to HTML
+        $payload = $driver->buildServicePayload('Test message', $message, [
+            'message_format' => 'html'
+        ]);
+
+        $this->assertEquals('html', $payload['message_format']);
+    }
 }

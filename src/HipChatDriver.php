@@ -77,7 +77,7 @@ class HipChatDriver extends HttpDriver
      */
     public function buildServicePayload($message, $matchingMessage, $additionalParameters = [])
     {
-        $parameters = array_merge_recursive([
+        $parameters = array_replace_recursive([
             'message_format' => 'text',
         ], $additionalParameters);
         /*
